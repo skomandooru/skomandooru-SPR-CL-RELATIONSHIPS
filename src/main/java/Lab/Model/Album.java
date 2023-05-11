@@ -24,16 +24,24 @@ public class Album {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long albumId;
     private String title;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "artist_fk")
+    /**
+     * Check out the other model classes to see how you can link many albums to one artist.
+     * It will need to leverage the "artist_fk" foreign key of the album table.
+     */
     private Artist artist;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "album_fk")
+    /**
+     * Check out the other model classes to see how you can link one album to many songs.
+     * It will need to leverage the "album_fk" foreign key of the song table.
+     */
     private List<Song> songs;
 
     public Album(String title) {
         this.title = title;
     }
+
+    /**
+     * A custom toString is provided that avoids recursively serializing related entities.
+     */
     @Override
     public String toString() {
         return "Album{" +

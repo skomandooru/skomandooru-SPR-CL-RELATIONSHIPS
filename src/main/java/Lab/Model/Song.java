@@ -24,6 +24,11 @@ public class Song {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long songId;
     private String title;
+    /**
+     * There is many songs for one album.
+     * They will be connected via a foreign key by the name "album_fk", belonging to the song table.
+     * Spring will automatically perform the logic needed to join the Song and Album tables to get related albums.
+     */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "album_fk")
     private Album album;
@@ -31,7 +36,9 @@ public class Song {
     public Song(String title) {
         this.title = title;
     }
-
+    /**
+     * A custom toString is provided that avoids recursively serializing related entities.
+     */
     @Override
     public String toString() {
         return "Song{" +
