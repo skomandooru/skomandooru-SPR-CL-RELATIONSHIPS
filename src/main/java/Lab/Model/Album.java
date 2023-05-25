@@ -34,7 +34,7 @@ public class Album {
     private Artist artist;
 
     /**
-     * Check out the other model classes to see how you can link one album to many songs.
+     * Review the other model classes to see how you can link one album to many songs.
      */
     private List<Song> songs;
 
