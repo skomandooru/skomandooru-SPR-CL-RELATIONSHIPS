@@ -31,13 +31,11 @@ public class Album {
     /**
      * Review the other model classes to see examples of annotations that link entities
      */
-    @ManyToOne//TODO: REMOVE ME
     private Artist artist;
 
     /**
      * Check out the other model classes to see how you can link one album to many songs.
      */
-    @OneToMany//TODO: REMOVE ME
     private List<Song> songs;
 
     public Album(String title) {
