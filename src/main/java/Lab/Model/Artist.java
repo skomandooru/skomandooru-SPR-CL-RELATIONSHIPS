@@ -7,21 +7,20 @@ import java.util.List;
 
 /**
  * This is an ORM entity for an Artist. Artists have a one-to-many relationship with albums (one artist can produce
- * many albums.) This is reflected in the @OneToMany annotation. Spring associate the albums field with a foreign
- * key in the Album table, and if we wish to find the albums written by a particular artist, JPA will perform a join
- * with the Album table to retrieve the artists. All that is needed to retrieve a List of the related albums is to call
- * the method artist.getAlbums().
- *
- * For the sake of brevity, Lombok is also used to automatically generate boilerplate code.
+ * many albums). This is reflected in the @OneToMany annotation. Spring Data JPA will associate these entities (and
+ * their database tables) with each other according to the specified relationship. This is done with foreign keys, but
+ * we are abstracted away from that behavior. If we wish to find the albums written by a particular artist, JPA will
+ * perform a join with the Album table to retrieve the artists. All that is needed to retrieve a List of the related
+ * albums is to call the method artist.getAlbums().
  */
 @Entity
-@ToString
+//For the sake of brevity, the following 4 annotations tell Lombok to generate boilerplate code at compile-time.
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class Artist {
-    //    The GeneratedValue annotation allows for Spring to automatically generate a unique ID.
+    //The GeneratedValue annotation allows for Spring to automatically generate a unique ID.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long artistId;
@@ -46,7 +45,6 @@ public class Artist {
         return "Artist{" +
                 "artistId=" + artistId +
                 ", name='" + name + '\'' +
-                ", albums=" + albums +
                 '}';
     }
 }
