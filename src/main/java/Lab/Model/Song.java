@@ -19,7 +19,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 public class Song {
-    //    The GeneratedValue annotation allows for Spring to automatically generate a unique ID.
+    //The GeneratedValue annotation allows for Spring to automatically generate a unique ID.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long songId;
@@ -37,7 +37,7 @@ public class Song {
         this.title = title;
     }
     /**
-     * A custom toString is provided that avoids recursively serializing related entities.
+     * A custom toString() is provided that avoids recursively serializing related entities.
      */
     @Override
     public String toString() {

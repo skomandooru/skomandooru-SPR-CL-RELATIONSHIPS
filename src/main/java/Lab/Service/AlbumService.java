@@ -15,6 +15,7 @@ import java.util.List;
  * There is no need to modify anything in this class.
  */
 @Service
+@Transactional
 public class AlbumService {
 
     AlbumRepository albumRepository;
@@ -31,7 +32,6 @@ public class AlbumService {
         return albumRepository.findAll();
     }
 
-    @Transactional
     public Song addSongToAlbum(long albumId, Song song){
         Album album = albumRepository.findById(albumId).get();
         album.getSongs().add(song);

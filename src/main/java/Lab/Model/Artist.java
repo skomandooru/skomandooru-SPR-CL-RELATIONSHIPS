@@ -38,7 +38,7 @@ public class Artist {
         this.name = name;
     }
     /**
-     * A custom toString is provided that avoids recursively serializing related entities.
+     * A custom toString() is provided that avoids recursively serializing related entities.
      */
     @Override
     public String toString() {

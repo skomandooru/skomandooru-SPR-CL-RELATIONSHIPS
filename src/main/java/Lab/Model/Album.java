@@ -24,17 +24,16 @@ public class Album {
     //The GeneratedValue annotation allows for Spring to automatically generate a unique ID.
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private long albumId;
     private String title;
 
     /**
-     * Review the other model classes to see examples of annotations that link entities
+     * Review the other model classes to see examples of annotations that link entities.
      */
     private Artist artist;
 
     /**
-     * Review the other model classes to see how you can link one album to many songs.
+     * Review the other model classes to see examples of annotations that link entities.
      */
     private List<Song> songs;
 
@@ -43,7 +42,7 @@ public class Album {
     }
 
     /**
-     * A custom toString is provided that avoids recursively serializing related entities.
+     * A custom toString() is provided that avoids recursively serializing related entities.
      */
     @Override
     public String toString() {

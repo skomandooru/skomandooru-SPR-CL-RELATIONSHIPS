@@ -6,6 +6,7 @@ import Lab.Model.Song;
 import Lab.Repository.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * There is no need to modify anything in this class.
  */
 @Service
+@Transactional
 public class ArtistService {
 
     ArtistRepository artistRepository;
