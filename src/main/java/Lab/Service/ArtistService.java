@@ -6,15 +6,17 @@ import Lab.Model.Song;
 import Lab.Repository.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * Service class used to demonstrate ORM functionality for related entities.
- * This leverages the stereotype annotation @Service, which functionally is the same as @Component.
+ * This leverages the stereotype annotation @Service, which is functionally the same as @Component.
  * There is no need to modify anything in this class.
  */
 @Service
+@Transactional
 public class ArtistService {
 
     ArtistRepository artistRepository;
