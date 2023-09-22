@@ -30,11 +30,16 @@ public class Album {
     /**
      * Review the other model classes to see examples of annotations that link entities.
      */
+    // Establishing a Many-to-One relationship with Artist
+    @ManyToOne
+    @JoinColumn(name = "artist_id") // You may need to specify the actual column name
     private Artist artist;
 
     /**
      * Review the other model classes to see examples of annotations that link entities.
      */
+    // Establishing a One-to-Many relationship with Song
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
     private List<Song> songs;
 
     public Album(String title) {
